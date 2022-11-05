@@ -3,7 +3,7 @@ MAINTAINER David Wright davecwright3@gmail.com
 
 USER root
 ENV NB_UID=1000
-RUN apt update && apt install -y git libfontconfig libgl1-mesa-glx libasound2 wget avahi-daemon
+RUN apt update && apt install -y git libfontconfig libgl1-mesa-glx libasound2 wget avahi-daemon xz-utils
 RUN rm -rf /var/lib/apt/lists/*
 ENV JUPYTER_ENABLE_LAB true
 
@@ -16,5 +16,5 @@ RUN chmod 777 /home/jovyan/wolfram/LINUX
 USER root
 RUN /home/jovyan/wolfram/LINUX
 USER $NB_ID
-RUN echo "export PATH=$PATH:"/usr/local/Wolfram/WolframEngine/12.1/SystemFiles/Kernel/Binaries/Linux-x86-64/"" >> /etc/environment
+RUN echo "export PATH=$PATH:"/usr/local/Wolfram/WolframEngine/13.1/SystemFiles/Kernel/Binaries/Linux-x86-64/"" >> /etc/environment
 
